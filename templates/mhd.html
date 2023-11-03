@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Detection Form</title>
+    <style>
+        body {
+            background-color: #00ffff; /* Set a background color for the entire page */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff; /* Set a background color for the form container */
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #007BFF; /* Background color for the heading */
+            color: #fff; /* Text color for the heading */
+            padding: 10px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+        }
+
+        p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mental Health Detection Form</h1>
+
+        <form action="/mhd" method="post">
+             <p>
+            <label>Age</label>
+            <input type="text" name="age">
+        </p>
+        <p>
+            <label>Gender</label>
+            <select name="gen" id="gen">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </p>
+        <p>
+            <label>Are you self employed?</label>
+            <select name="self_emp" id="self_emp">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </p>
+        <p>
+            <label>Do you have a family history of mental illness?</label>
+            <select name="fam_hist" id="fam_hist">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </p>
+        <p>
+            <label>Does your work interfere with your personal life?</label>
+            <select name="work_inter" id="work_inter">
+                <option value="Sometimes">Sometimes</option>
+                <option value="Not Sure">Not Sure</option>
+                <option value="Never">Never</option>
+                <option value="Rarely">Rarely</option>
+                <option value="Often">Often</option>
+            </select>
+        </p>
+        <p>
+            <label>Number Of employees you work with?</label>
+            <select name="no_emp" id="no_emp">
+                <option value="1-5">1-5</option>
+                <option value="6-25">6-25</option>
+                <option value="26-100">26-100</option>
+                <option value="100-500">100-500</option>
+                <option value="500-1000">500-1000</option>
+                <option value="More than 1000">More than 1000</option>
+            </select>
+            
+        </p>
+        <p>
+            <label>Do you have a remote job?</label>
+            <select name="rem_work" id="rem_work">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </p>
+        <p>
+            <label>Do you work for a technical company?</label>
+            <select name="tech_comp" id="tech_comp">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </p>
+        <p>
+            <label>Do you get benefits?</label>
+            <select name="benefits" id="benefits">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Don't know">Don't know</option>
+            </select>
+        </p>
+        <p>
+            <label>Do you get care options?</label>
+            <select name="care_opt" id="care_opt">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Not sure">Not sure</option>
+            </select>
+        </p>
+        <p>
+            <label>Does your job include a wellness program?</label>
+            <select name="well_prog" id="well_prog">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Don't know">Don't know</option>
+            </select>
+        </p>
+        <p>
+            <label>Do you often feel like you seek help?</label>
+            <select name="seek_help" id="seek_help">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Don't know">Don't know</option>
+            </select>
+        </p>
+        <p>
+            <label>Would you prefer being more anonymous in your job?</label>
+            <select name="anonimity" id="anonimity">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Don't know">Don't know</option>
+            </select>
+        </p>
+        <p>
+            <label>How easy is it to get leaves at your job?</label>
+            <select name="leave" id="leave">
+                <option value="Very easy">Very easy</option>
+                <option value="Somewhat easy">Somewhat easy</option>
+                <option value="Don't know">Don't know</option>
+                <option value="Somewhat difficult">Somewhat difficult</option>
+                <option value="Very difficult">Very difficult</option>
+            </select>
+        </p>
+        <p>
+            <label>Do you think that your work affects your mental health?</label>
+            <select name="mhc" id="mhc">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Maybe">Maybe</option>
+            </select>
+        </p>
+        <p>
+            <label>Do you think that your work affects your physical health?</label>
+            <select name="phc" id="phc">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Maybe">Maybe</option>
+            </select>
+        </p>
+        <p>
+            <label>Do you enjoy working with your coworkers?</label>
+            <select name="coworkers" id="coworkers">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Some of them">Some of them</option>
+            </select>
+        </p>
+        <p>
+            <label>Do you enjoy working with your supervisors?</label>
+            <select name="supervisors" id="supervisors">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Some of them">Some of them</option>
+            </select>
+        </p>
+            <label>Would you like a mental health interview?</label>
+            <select name="mhi" id="mhi">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Maybe">Maybe</option>
+            </select>
+        </p>
+        </p>
+            <label>Would you like a physical health interview?</label>
+            <select name="phi" id="phi">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Maybe">Maybe</option>
+            </select>
+        </p>
+        <p>
+            <label>Would you rather choose a mental health interview or a physical health Interview?</label>
+            <select name="m_vs_p" id="m_vs_p">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Don't know">Don't know</option>
+            </select>
+        </p>
+        <p>
+            <label>Do you think that your work is affected when you are being observed more often?</label>
+            <select name="obs_consq" id="obs_consq">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </p>
+        
+
+
+        <p>
+            <input type="submit" value="Predict">
+        </p>
+        </form>
+    </div>
+</body>
+</html>
